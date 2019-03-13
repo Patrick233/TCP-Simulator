@@ -9,8 +9,8 @@ set n4 [$ns node]
 set n5 [$ns node]
 set n6 [$ns node]
 
-set pkt_size [200]
-set filename ["output/trace"]
+set pkt_size 200
+set filename "output/experiment1.out"
 
 #Open the trace file
 set tf [open $filename w]
@@ -48,7 +48,7 @@ proc create_CBR {} {
 	$cbr0 attach-agent $udp0
 	$cbr0 set type_ CBR
 	$cbr0 set packet_size_ $pkt_size
-	$cbr0 set rate_ 1mbs
+	$cbr0 set rate_ 5mbs
 	$cbr0 set random_ false
 	$ns attach-agent $n3 $null0
 	$ns connect $udp0 $null0
